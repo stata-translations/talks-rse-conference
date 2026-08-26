@@ -1,0 +1,14 @@
+---
+title: "Using Large Language Models and Coding Agents to Translate Stata Packages: Benefits and Risks"
+author: Stephen Thompson
+date: 2026-09-04
+institute: UCL Centre for Advanced Research Computing and UCL Innovative Clinical Trials Unit
+title-image: https://avatars.githubusercontent.com/u/278628511?s=400&u=ba33ed091d293c8e9da8789d491a2c1964c3a53c&v=4
+title-image-width: 20%
+title-image-alt: The Stata2R Logo, an R overlaid with white squares.
+format:
+  revealjs:
+    logo: images/arc-logo.svg
+---
+
+{{< include _content.qmd >}}

@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this presentation, please cite it as below."
+title: "Using Large Language Models and Coding Agents to Translate Stata Packages: Benefits and Risks"
+abstract: >-
+  Packages written in Stata are often focussed on solving specific problems in specific research domains. Within the research domain many people use Stata, so code sharing and reuse is possible. The code itself however may be high quality and useful to other research domains, but this may be prevented by limited use of Stata in other domains. Translating Stata code to other programming languages may therefore help researchers to reach beyond their own domain, increasing research impact. Translation requires skills in the source and target language, and the research domain, making it unlikely that any individual will be able to perform translation. Large language models (LLM) support translation by amalgamating language and domain specific knowledge from many sources.
+
+We will discuss our experiences in developing a Claude Code plugin that supports domain experts in statistics in translating community contributed Stata packages to R and Python.
+
+The plugin implements 4 skills;
+
+ - Analyse and plan: Is the package well documented? Which target language(s)? Create a new library or contribute to an existing library.
+
+ - Translation to pseudocode: Translate to pseudocode to support human review without language expertise. Excludes any existing tests.
+
+ - Pseudocode to target language(s): Translate; add infrastructure to support ongoing opensource development (continuous integration testing, contributing guidelines, licenses).
+
+ - Tests and documentation: Implement any existing Stata tests in target language; summarise test correspondence; highlight missing tests. Review documentation (examples, papers), and translate to target language (eg. Vignettes in R).
+
+We used the plugin in workshops with statisticians to translate a selection of Stata packages. We will discuss our experiences in code translation, discussing the quality and applicability of the results.
+
+authors:
+  - family-names: Thompson
+    given-names: Stephen
+    email: s.thompson@ucl.ac.uk
+    affiliation: University College London
+    orcid: "https://orcid.org/0000-0001-7286-1326"
+  - family-names: Tamuri
+    given-names: Asif
+    orcid: "https://orcid.org/0000-0001-6633-3789"
+  - family-names: Pérez-Suárez
+    given-names: David
+    orcid: "https://orcid.org/0000-0003-0784-6909"
+  - family-names: Carpenter
+    given-names: James
+  - family-names: Tra My Pham
+    given-names: Tra
+  - family-names: Fisher
+    given-names: David
+  - family-names: Quartagno
+    given-names: Matteo
+  - family-names: Diaz Montana
+    given-names: Carlos
+
+repository-code: "https://github.com/stata-translations/talks-stata-con"
+license: CC0-1.1
+version: 0.0.1
+date-released: "2026-08-26"
+doi: 

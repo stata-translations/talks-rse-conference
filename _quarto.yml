@@ -1,0 +1,14 @@
+project:
+  output-dir: _output
+format:
+  revealjs:
+    incremental: true
+    css: css/style.css
+    slide-number: true
+    margin: 0.15
+    template-partials:
+      - templates/title-slide.html
+resources:
+  - images/arc-banner.svg
+  - images/arc-logo.svg
+

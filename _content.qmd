@@ -1,0 +1,253 @@
+## Today's Talk
+
+ - Brief Introduction (Talk/Stephen/Toby)
+ - Background (Collaboration with Clinical Trials Unit)
+ - Code Translation Motivation
+ - Code Translation Mechanics
+ - Workshop Results and Next Steps
+
+## Introduction: Stephen
+
+ - Senior Research Software Engineer Since October 2023
+ - Background in augmented reality for keyhole surgery.
+ - Mostly Healthcare projects: informus, education, EMAP, sense-base.
+ - Special interest in game development for healthcare - Astrobalance.
+
+## Background - ARC Collaboration with ICTU
+![](images/clinical_trials_unit.png){fig-alt="A screenshot of the Innovative Clinical Trials Unit website" height="280"}
+
+ - World leaders in clinical trial design
+ - Robust/tested statistics to support clinical trial design
+ - 2nd Floor of 90HH
+
+## ARC / ICTU Collaboration
+
+ - Multiyear funding for ARC to support ICTU to improve code quality and sharing.
+ - Outputs: 
+   - "Using Large Language Models and Coding Agents to Translate Stata Packages: Benefits and Risks" [Stata Con, London, Next Week](https://stata-uk.com/stata-uk-2026.html)
+   - "Code Translation using Large Language Models: What's the role of the Research Software Engineer?" [RSE Con, September 2026](https://virtual.oxfordabstracts.com/event/76908/submission/92)
+
+## Motivation - Stata Translation
+
+ - Stata - commercial (closed source) statistical analysis software
+   - economics, sociology, health
+ - Researchers can publish bespoke packages. 
+   - Stata journal enforces testing/documentation etc.
+ - Compared to Python or R the software impact is limited. 
+ - Can we increase software impact by translating to other languages?
+
+## Motivation Stata and R (Citation Metrics)
+
+ - R Journal Impact (Scimago Journal Ranking: 0.483) (H-Index 71)
+ - Stata Journal Impact (Scimago Journal Ranking: 1.699) (H-Index 123)
+
+## Motivation Stata and R (Software Metrics)
+
+ - Stata Language on GitHub 18.4K repositories ~ median 6 stars 
+   - High impact Stata packages reghdfe 248 stars, ietoolkit 244
+ - R Language on GithHub 1.1M repositories ~ median 313 stars 
+
+## Motivation Stata and R - Creating Impact
+
+ - Conclusion. Translations;
+   - may not have big impact on paper citations.
+   - likely to increase the software impact (re-use, contributions, maintenance) of your software.
+
+## Stata2R: Practicalities
+
+ - Pre-requisites:  
+   - Well written/documented/tested Stata code 👍
+   - Language Expertise (Stata and R)
+   - Domain Expertise (Statistics)
+   - Time (funding)
+
+ - Can we leverage advances in agent based code translation?
+
+## Rapidly growing work on code translation using language models.
+
+![](images/paper_count.png){fig-alt="A plot showing a rapid increase in pubications references Lanugage models and code translations (to 65 in 2025)" width="65%"}
+
+## Stata2R: Practicalities
+
+ - Resources:
+   - Departmental subscription to Claude Code.
+   - Approx 4 weeks RSE time.
+ - Plan:
+   - Research Code translation. 
+   - Develop method -> A Claude Plugin.
+   - Develop HowTo for Statisticians.
+
+## What's in a plugin
+A plugin is a collection of `Skills`
+
+```md
+└── skills
+    ├── add-missing-tests
+    │   └── SKILL.md
+    ├── add-stata-tests-r
+    │   └── SKILL.md
+    ├── hello
+    │   └── SKILL.md
+    ├── pseudocode-to-r
+    │   ├── assets
+    │   ├── references
+    │   │   └── language_mappings.md
+    │   └── SKILL.md
+    ├── run-stata
+    │   └── SKILL.md
+    ├── stata-to-pseudocode
+    │   ├── assets
+    │   ├── references
+    │   └── SKILL.md
+    └── translation-strategy
+        ├── assets
+        ├── references
+        └── SKILL.md
+
+15 directories, 8 files
+```
+
+## What's in a Skill
+
+[Skills are Markdown](https://github.com/stata-translations/Stata2R/blob/main/stata-translation/skills/)
+
+ - And easy to install
+
+    ```
+    /plugins marketplace add https://github.com/stata-translations/Stata2R.git
+    /plugin install stata-translation
+    /reload-plugins
+    /stata-translation:hello
+    ```
+
+
+## Run as an interactive workshop
+
+Developed and delivered a [Workshop](https://github.com/stata-translations/Stata2R/blob/main/docs/workshop.md) to around 
+10 statisticians. Aims:
+
+  - Teach them how to use Claude to translate code.
+  - Leverage their skills to help understand how well Claude works.
+    - [Pre Workshop Surveys](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwuNcJ7ofdGhDpRexUha3NYhUMU5QQ000NVpFTVRKRTEzRDRCQ0w4V05XMS4u)
+    - [Post work shop survey](https://forms.office.com/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwkgtFALcEfRKnhSRePBd-9dUQjI1SzdIT1pROVBHVDJSNDU3QUNZVTBGTiQlQCN0PWcu)
+
+## Results: Brief
+
+  - Claude can translate code and appears to give sensible results.
+  - Participants were generally happy and eager to pursue this further.
+    - Statisticians take the accuracy of the software very seriously. 
+
+
+## Pre-Workshop: Current Roles
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-roles.html" title="Answers to survey question on current roles. Total of 9 statisticians, 5 researchers, 1 research software engineer, one Data Scientist."></iframe>
+```
+
+## Pre-Workshop: Stata Fluency
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-stata_fluency.html" title="The participants self reported stata fluency. 8 were fluent, 4 Occasional, 1 never."></iframe>
+```
+
+## Pre-Workshop: Stata and R Fluency
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-stata-vs-r_fluency.html" title="X-Y plot of Stata vs R Fluency. No one was fluent in both."></iframe>
+```
+
+## Pre-Workshop: Language Correlation
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-languages.html" title="Correlation between language fluency. Fluency in Stata was negatively correlated with fluency in R, Python, and Matlab."></iframe>
+```
+## Pre-Workshop: Expectations Word Cloud
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre_expectations.html" title="A word cloud of answers to the free text question 'Is there anything specific you want to get out of the workshop?' The dominant phrase is 'Stata to R Translation' Other phrases include 'LLM Workflow best practices' and 'Exploring Claude's Capabilities'"></iframe>
+```
+
+## Post-Workshop: Concerns Work Cloud
+
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_concerns_wordcloud.html" title="A word cloud of answers to the post workshop question 'What concerns (if any) do you have with using large language models for code translation? Notabale answers include 'Fear of hidden errors' and 'Testing and output control'"></iframe>
+```
+
+## Post-Workshop: Ideas for Improvements / Future Work.
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_improvements.html" title="A word cloud of answers to the question "What improvements would you suggest? Most respondonts wanted to see more work on 'verifying correctness'"></iframe>
+```
+
+## Post-Workshop: Skills assessment (analysis).
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_analysis.html" title="The third blood vessel game."></iframe>
+```
+
+## Post-Workshop: Skills assessment (infrastructure).
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_infrastructure.html" title="The third blood vessel game."></iframe>
+```
+
+## Post-Workshop: Skills assessment (interaction required).
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_interaction.html" title="The third blood vessel game."></iframe>
+```
+
+## Post-Workshop: Skills assessment (pseudocode).
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_pseudocode.html" title="The third blood vessel game."></iframe>
+```
+
+## Post-Workshop: Skills assessment (reliability).
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_reliability.html" title="The third blood vessel game."></iframe>
+```
+
+## Post-Workshop: Skills assessment (target language quality).
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_target_language.html" title="The third blood vessel game."></iframe>
+```
+
+## Post-Workshop: Skills assessment (testing quality).
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_testing.html" title="The third blood vessel game."></iframe>
+```
+
+## Post-Workshop: Skills assessment (Time Taken).
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_time.html" title="The third blood vessel game."></iframe>
+```
+
+## Post-Workshop: Skills assessment (Documentation Quality).
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_vs_effort.html" title="The third blood vessel game."></iframe>
+```
+
+## Post-Workshop: Workshop Quality
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_workshop_useful.html" title="The third blood vessel game."></iframe>
+```
+
+## Summary
+
+  - Claude can translate code.
+  - The plugin provides some structure, but human intervention is still required to keep Claude on track.
+  - Translation depends on documentation and testing as well as source code quality.
+  - Results are non deterministic.
+  - Future work: Publish to CRAN.
+
+## With thanks to:
+
+  Asif Tamuri, James Carpenter, Matthew Burnell, David Fisher, Babak Choodri-Oskooei, Matteo Quartagno, Becky Turner, Tra My Pham, Guilio Scola, Michelle Clements, Ian White, Samina Begum, Henry Bern, Akshay Jagadeesh, David Perez-Suarez, Haroon Chughtai, and Toby.
