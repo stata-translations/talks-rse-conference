@@ -1,5 +1,5 @@
 ---
-title: "Using Large Language Models and Coding Agents to Translate Stata Packages: Benefits and Risks"
+title: "Code Translation using Large Language Models: What's the role of the Research Software Engineer?"
 author: Stephen Thompson
 date: 2026-09-04
 institute: UCL Centre for Advanced Research Computing and UCL Innovative Clinical Trials Unit
