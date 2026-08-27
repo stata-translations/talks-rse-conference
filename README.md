@@ -1,5 +1,7 @@
 # Presentation Slides for Stata Con London 4th September 2026
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22124105.svg)](https://doi.org/10.5281/zenodo.22124105)
+
 Slides for a presentation to Stata conference 
 
 You can build locally with `quarto render` or use the publish [action](.github/workflows/publish.yml).
