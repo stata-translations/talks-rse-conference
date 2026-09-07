@@ -14,8 +14,9 @@
 
  - Experts in clinical trial design and analysis - statisticians.
    - Impact through successful clinical trials / publications.
+   - A lot of software written in Stata.
  - Research software engineers
-   - Collaboration to create create impact through software.
+   - Collaboration to create impact through software.
 
 ## About Stata
 
@@ -52,6 +53,37 @@
    - Non deterministic (stochastic sampling from many possible answers).
    - Will usually do what you ask, which may not be a good thing.
  - We developed the **Stata2R** "plugin" with 4 "skills" to limit the impact of non deterministic behaviour and unquestioning behaviour.
+ - We delivered a 4 hour workshop to use the plugin.
+ 
+## What's in a Plugin / Skill
+
+[Skills are defined in markdown.](https://github.com/stata-translations/Stata2R/blob/main/stata-translation/skills/)
+
+ - Plugins are collections of skills that are easy to install
+
+    ```
+    /plugins marketplace add https://github.com/stata-translations/Stata2R.git
+    /plugin install stata-translation
+    /reload-plugins
+    /stata-translation:hello
+    ```
+ -  ```
+    /stata-translation:translation-strategy
+
+    ```
+ -  ```
+    /stata-translation:stata-to-pseudocode
+
+    ```
+ -  ```
+    /stata-translation:pseudocode-to-r
+
+    ```
+ -  ```   
+    /stata-translation:add-missing-tests
+
+    ```
+
 
 ## Plugin Skill 1: Translation Strategy
  
@@ -63,33 +95,21 @@
  
  - Evidence that two stage translation creates better code.
  - Enables a human review step.
- - Supports translation to multiple target language. 
- - Deliberately excluded any existing tests.
+ - Use any documentation files (.sthlp) to inform the translation.
+ - Ignore all files in the testing directory.
  
 ## Plugin Skill 3: Pseudocode to R
  
  - Use the pseudocode to create an R package.
+ - Create automated tests.
+ - Port Stata documentation and examples to R (create vignettes)
+ - Port any dialogues (graphical user interfaces) to R.
  - Copy over licence file and create README, CONTRIBUTING, files etc.
 
-## Plugin Skill 4: Add Stata Tests to R
+## Plugin Skill 4: Add Missing Stata Tests to R
  
  - Port the Stata tests to R and confirm they pass.
  - Document Stata to R test correspondence and verify results.
- - Port Stata documentation and examples to R (create vignettes)
- - Port any dialogues (graphical user interfaces) to R.
- 
-## What's in a Plugin / Skill
-
-[Skills are Plain Text](https://github.com/stata-translations/Stata2R/blob/main/stata-translation/skills/)
-
- - Plugins are collections of skills that are easy to install
-
-    ```
-    /plugins marketplace add https://github.com/stata-translations/Stata2R.git
-    /plugin install stata-translation
-    /reload-plugins
-    /stata-translation:hello
-    ```
 
 ## Developed a training program.
 
@@ -97,7 +117,7 @@ We developed and delivered a [Workshop](https://github.com/stata-translations/St
 10 statisticians aiming to:
 
   - Teach statisticians to use Claude to translate code.
-  - Leverage statisticians skills to help understand how well Claude works.
+  - Use statisticians to review the quality of resulting translations.
     - [Pre Workshop Surveys](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwuNcJ7ofdGhDpRexUha3NYhUMU5QQ000NVpFTVRKRTEzRDRCQ0w4V05XMS4u)
     - [Post work shop survey](https://forms.office.com/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwkgtFALcEfRKnhSRePBd-9dUQjI1SzdIT1pROVBHVDJSNDU3QUNZVTBGTiQlQCN0PWcu)
 
@@ -108,7 +128,13 @@ We developed and delivered a [Workshop](https://github.com/stata-translations/St
 <iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-stata-vs-r_fluency.html" title="X-Y plot of Stata vs R Fluency. No one was fluent in both."></iframe>
 ```
 
-## Post-Workshop: Skills assessment (Time Taken).
+## Post-Workshop: Skills assessment (Target language quality).
+
+```{=html}
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_target_language.html" title="The percieved quality of the translation, grouped my model variant."></iframe>
+```
+
+## Post-Workshop: Skills assessment Example (Time Taken).
 
 ```{=html}
 <iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_time.html" title="The time taken to perform translation by model variant."></iframe>
@@ -138,8 +164,6 @@ We developed and delivered a [Workshop](https://github.com/stata-translations/St
   - Claude can translate code.
   - Results are non deterministic.
   - The plugin provides some structure, but human intervention is still required to keep Claude on track.
-  - Translation depends on documentation and testing as well as source code quality.
-  - Accuracy and validation is critical for clinical trials software.
 
 ## Contributors:
 
