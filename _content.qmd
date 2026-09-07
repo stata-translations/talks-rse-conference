@@ -4,7 +4,6 @@
  - Code Translation Motivation
  - Code Translation Mechanics
  - Workshop Results
- - Summary
 
 ## Innovative Clinical Trials Unit and ARC
 
