@@ -1,57 +1,58 @@
 ## Today's Talk
 
- - Brief Introduction (Talk/Stephen/Toby)
- - Background (Collaboration with Clinical Trials Unit)
+ - Brief Introduction (UCL ICTU, UCL ARC)
  - Code Translation Motivation
  - Code Translation Mechanics
  - Workshop Results and Next Steps
 
-## Introduction: Stephen
+## Innovative Clinical Trials Unit
 
- - Senior Research Software Engineer Since October 2023
- - Background in augmented reality for keyhole surgery.
- - Mostly Healthcare projects: informus, education, EMAP, sense-base.
- - Special interest in game development for healthcare - Astrobalance.
-
-## Background - ARC Collaboration with ICTU
 ![](images/clinical_trials_unit.png){fig-alt="A screenshot of the Innovative Clinical Trials Unit website" height="280"}
 
- - World leaders in clinical trial design
- - Robust/tested statistics to support clinical trial design
- - 2nd Floor of 90HH
+ - Expert in clinical trial design and analysis.
+ - Robust/tested statistics to support clinical trial design.
+ - Impact through successful clinical trials / publications.
 
-## ARC / ICTU Collaboration
 
- - Multiyear funding for ARC to support ICTU to improve code quality and sharing.
- - Outputs: 
-   - "Using Large Language Models and Coding Agents to Translate Stata Packages: Benefits and Risks" [Stata Con, London, Next Week](https://stata-uk.com/stata-uk-2026.html)
-   - "Code Translation using Large Language Models: What's the role of the Research Software Engineer?" [RSE Con, September 2026](https://virtual.oxfordabstracts.com/event/76908/submission/92)
+## Advanced Research Computing
 
-## Motivation - Stata Translation
+![](images/arc.png){fig-alt="A screenshot of the Advanced Research Computing website, stating that ARC is UCL's research, innovation and service centre for the tools, practices and systems that enable computational science and digital scholarship." height="280"}
 
- - Stata - commercial (closed source) statistical analysis software
-   - economics, sociology, health
- - Researchers can publish bespoke packages. 
-   - Stata journal enforces testing/documentation etc.
- - Compared to Python or R the software impact is limited. 
- - Can we increase software impact by translating to other languages?
+ - Support researchers to create impact through software.
+ - Software re-use and software sustainability.
+   - Software that outlives the original grant funding.
+ - Develop skills to contribute to key open source software.
 
-## Motivation Stata and R (Citation Metrics)
+## Motication: Example artbin.
 
- - R Journal Impact (Scimago Journal Ranking: 0.483) (H-Index 71)
- - Stata Journal Impact (Scimago Journal Ranking: 1.699) (H-Index 123)
+![](images/artbin.png){fig-alt="A screenshot of the artbin publication in the Stata Journal titled artbin: Extended sample size for randomized trials with binary outcomes." height="440"}
+
+## Motivation: Example artbin.
+
+  - High quality software (including documentation and tests)
+  - Demonstrated impact - used and cited in published trials.
+  - Open source (GPL3) - free to download/modify
+    - need Stata License to run.
+  - Can we increase impact by translation. 
+
+## Motivation: Example reghdfe
+
+ - [reghdfe](https://github.com/sergiocorreia/reghdfe)
+ - High impact Stata package
+ - Is it sustainable/maintainable?
+ - Can we make it last longer by translation.
+ - Compare with [dplyr](https://github.com/tidyverse/dplyr).
 
 ## Motivation Stata and R (Software Metrics)
 
- - Stata Language on GitHub 18.4K repositories ~ median 6 stars 
-   - High impact Stata packages reghdfe 248 stars, ietoolkit 244
- - R Language on GithHub 1.1M repositories ~ median 313 stars 
+ - R is free and open source. 
+ - Many more users and developers for R.
+ - Stata Language on GitHub 18.4K repositories 
+ - R Language on GithHub 1.1M repositories
+ 
+## Motivation Stata and R - More Impact?
 
-## Motivation Stata and R - Creating Impact
-
- - Conclusion. Translations;
-   - may not have big impact on paper citations.
-   - likely to increase the software impact (re-use, contributions, maintenance) of your software.
+ - Translation is likely to increase impact of software, but no evidence yet.
 
 ## Stata2R: Practicalities
 
@@ -63,55 +64,44 @@
 
  - Can we leverage advances in agent based code translation?
 
-## Rapidly growing work on code translation using language models.
 
-![](images/paper_count.png){fig-alt="A plot showing a rapid increase in pubications references Lanugage models and code translations (to 65 in 2025)" width="65%"}
+## Agentic Coding (Claude Code)
+ 
+ - A user interface for working with large language models to complete software tasks. 
+ - Users communicate in plain text (for example "translate artbin to R")
+ - Non deterministic (stochastic sampling from many possible answers).
+ - We developed the **Stata2R** "plugin" with 4 "skills" to try and limit the effects of non deterministic behaviour.
 
-## Stata2R: Practicalities
+## Plugin Skill 1: Translation Strategy
+ 
+ - Summarise the purpose of the library.
+ - Is it worth translating? (existing R libraries, users etc)
+ - Is the documentation and testing sufficient to enable a good translation.
+ 
+## Plugin Skill 2: Stata to Pseudocode
+ 
+ - Evidence that two stage translation creates better code.
+ - Enables a human review step.
+ - Supports translation to multiple target language. 
+ - Deliberately excluded any existing tests.
+ 
+## Plugin Skill 3: Pseudocode to R
+ 
+ - Use the pseudocode to create an R package.
+ - Copy over licence file and create README, CONTRIBUTING, files etc.
 
- - Resources:
-   - Departmental subscription to Claude Code.
-   - Approx 4 weeks RSE time.
- - Plan:
-   - Research Code translation. 
-   - Develop method -> A Claude Plugin.
-   - Develop HowTo for Statisticians.
+## Plugin Skill 4: Add Stata Tests to R
+ 
+ - Port the Stata tests to R and confirm they pass.
+ - Document Stata to R test correspondence and verify results.
+ - Port Stata documentation and examples to R (create vignettes)
+ - Port any dialogues (graphical user interfaces) to R.
+ 
+## What's in a Plugin / Skill
 
-## What's in a plugin
-A plugin is a collection of `Skills`
+[Skills are Plain Text](https://github.com/stata-translations/Stata2R/blob/main/stata-translation/skills/)
 
-```md
-└── skills
-    ├── add-missing-tests
-    │   └── SKILL.md
-    ├── add-stata-tests-r
-    │   └── SKILL.md
-    ├── hello
-    │   └── SKILL.md
-    ├── pseudocode-to-r
-    │   ├── assets
-    │   ├── references
-    │   │   └── language_mappings.md
-    │   └── SKILL.md
-    ├── run-stata
-    │   └── SKILL.md
-    ├── stata-to-pseudocode
-    │   ├── assets
-    │   ├── references
-    │   └── SKILL.md
-    └── translation-strategy
-        ├── assets
-        ├── references
-        └── SKILL.md
-
-15 directories, 8 files
-```
-
-## What's in a Skill
-
-[Skills are Markdown](https://github.com/stata-translations/Stata2R/blob/main/stata-translation/skills/)
-
- - And easy to install
+ - Plugins are collections of skills that are easy to install
 
     ```
     /plugins marketplace add https://github.com/stata-translations/Stata2R.git
@@ -120,35 +110,16 @@ A plugin is a collection of `Skills`
     /stata-translation:hello
     ```
 
-
 ## Run as an interactive workshop
 
-Developed and delivered a [Workshop](https://github.com/stata-translations/Stata2R/blob/main/docs/workshop.md) to around 
-10 statisticians. Aims:
+We developed and delivered a [Workshop](https://github.com/stata-translations/Stata2R/blob/main/docs/workshop.md) to  
+10 statisticians aiming to:
 
-  - Teach them how to use Claude to translate code.
-  - Leverage their skills to help understand how well Claude works.
+  - Teach statisticians to use Claude to translate code.
+  - Leverage statisticians skills to help understand how well Claude works.
     - [Pre Workshop Surveys](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwuNcJ7ofdGhDpRexUha3NYhUMU5QQ000NVpFTVRKRTEzRDRCQ0w4V05XMS4u)
     - [Post work shop survey](https://forms.office.com/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwkgtFALcEfRKnhSRePBd-9dUQjI1SzdIT1pROVBHVDJSNDU3QUNZVTBGTiQlQCN0PWcu)
 
-## Results: Brief
-
-  - Claude can translate code and appears to give sensible results.
-  - Participants were generally happy and eager to pursue this further.
-    - Statisticians take the accuracy of the software very seriously. 
-
-
-## Pre-Workshop: Current Roles
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-roles.html" title="Answers to survey question on current roles. Total of 9 statisticians, 5 researchers, 1 research software engineer, one Data Scientist."></iframe>
-```
-
-## Pre-Workshop: Stata Fluency
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-stata_fluency.html" title="The participants self reported stata fluency. 8 were fluent, 4 Occasional, 1 never."></iframe>
-```
 
 ## Pre-Workshop: Stata and R Fluency
 
@@ -156,15 +127,10 @@ Developed and delivered a [Workshop](https://github.com/stata-translations/Stata
 <iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-stata-vs-r_fluency.html" title="X-Y plot of Stata vs R Fluency. No one was fluent in both."></iframe>
 ```
 
-## Pre-Workshop: Language Correlation
+## Post-Workshop: Skills assessment (Time Taken).
 
 ```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-languages.html" title="Correlation between language fluency. Fluency in Stata was negatively correlated with fluency in R, Python, and Matlab."></iframe>
-```
-## Pre-Workshop: Expectations Word Cloud
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre_expectations.html" title="A word cloud of answers to the free text question 'Is there anything specific you want to get out of the workshop?' The dominant phrase is 'Stata to R Translation' Other phrases include 'LLM Workflow best practices' and 'Exploring Claude's Capabilities'"></iframe>
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_time.html" title="The time taken to perform translation by model variant."></iframe>
 ```
 
 ## Post-Workshop: Concerns Work Cloud
@@ -179,75 +145,30 @@ Developed and delivered a [Workshop](https://github.com/stata-translations/Stata
 ```{=html}
 <iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_improvements.html" title="A word cloud of answers to the question "What improvements would you suggest? Most respondonts wanted to see more work on 'verifying correctness'"></iframe>
 ```
+## Further Considerations
 
-## Post-Workshop: Skills assessment (analysis).
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_analysis.html" title="The third blood vessel game."></iframe>
-```
-
-## Post-Workshop: Skills assessment (infrastructure).
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_infrastructure.html" title="The third blood vessel game."></iframe>
-```
-
-## Post-Workshop: Skills assessment (interaction required).
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_interaction.html" title="The third blood vessel game."></iframe>
-```
-
-## Post-Workshop: Skills assessment (pseudocode).
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_pseudocode.html" title="The third blood vessel game."></iframe>
-```
-
-## Post-Workshop: Skills assessment (reliability).
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_reliability.html" title="The third blood vessel game."></iframe>
-```
-
-## Post-Workshop: Skills assessment (target language quality).
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_target_language.html" title="The third blood vessel game."></iframe>
-```
-
-## Post-Workshop: Skills assessment (testing quality).
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_testing.html" title="The third blood vessel game."></iframe>
-```
-
-## Post-Workshop: Skills assessment (Time Taken).
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_time.html" title="The third blood vessel game."></iframe>
-```
-
-## Post-Workshop: Skills assessment (Documentation Quality).
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_vs_effort.html" title="The third blood vessel game."></iframe>
-```
-
-## Post-Workshop: Workshop Quality
-
-```{=html}
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_workshop_useful.html" title="The third blood vessel game."></iframe>
-```
+  - Ongoing development (do you plan on maintaining both versions?)
+  - Are you complying with the original license?
+  - Who owns the copyright?
+  - Preventing access to sensitive data.
 
 ## Summary
 
   - Claude can translate code.
+  - Results are non deterministic.
   - The plugin provides some structure, but human intervention is still required to keep Claude on track.
   - Translation depends on documentation and testing as well as source code quality.
-  - Results are non deterministic.
-  - Future work: Publish to CRAN.
+  - Accuracy and validation is critical for clinical trials software.
 
-## With thanks to:
+## Contributors:
 
-  Asif Tamuri, James Carpenter, Matthew Burnell, David Fisher, Babak Choodri-Oskooei, Matteo Quartagno, Becky Turner, Tra My Pham, Guilio Scola, Michelle Clements, Ian White, Samina Begum, Henry Bern, Akshay Jagadeesh, David Perez-Suarez, Haroon Chughtai, and Toby.
+  James Carpenter, Tra My Pham, Asif Tamuri, David Fisher, David Perez-Suarez, Matteo Quartagno, Carlos Diaz Montana, Ian White
+
+  **Links:**
+
+  Slides: [https://doi.org/10.5281/zenodo.22124100](https://doi.org/10.5281/zenodo.22124100)
+  Workshop Results: [https://doi.org/10.5281/zenodo.22093626](https://doi.org/10.5281/zenodo.22093626)
+  Stata2R Plugin: [https://github.com/stata-translations/Stata2R](https://github.com/stata-translations/Stata2R)
+
+![](images/qr-code.png){fig-alt="Link to https://stata-translations.github.io/talks-stata-conference/" height="240"}
+
