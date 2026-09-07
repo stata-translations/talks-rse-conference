@@ -2,16 +2,19 @@ cff-version: 1.2.0
 message: "If you use this presentation, please cite it as below."
 title: "Code Translation using Large Language Models: What's the role of the Research Software Engineer?"
 abstract: >-
-Translating research code to other programming language enables researchers to reach beyond their own domain, increasing research impact whilst guarding against software obsolescence. Successful translation requires skills in both the source and target language, and the research domain; it is unlikely that any individual will be able to perform translation. Large language models (LLMs) support translation by amalgamating language and domain knowledge from many sources. RSEs play a role in this by implementing best practice and providing validation tools.
+  Translating research code to other programming language enables researchers to reach beyond their own domain, increasing research impact whilst guarding against software obsolescence. Successful translation requires skills in both the source and target language, and the research domain; it is unlikely that any individual will be able to perform translation. Large language models (LLMs) support translation by amalgamating language and domain knowledge from many sources. RSEs play a role in this by implementing best practice and providing validation tools.
 
-We will discuss our experiences in developing a Claude Code plugin to support domain experts in statistics in translating Stata packages to R and Python.  
-The plugin implements 4 skills;
-  1. Analyse and plan: Is the package well documented and tested? Which target language(s)? Create a new library or contribute to an existing library?
-  2. Translation to pseudocode: Translation to pseudocode supports human review without language expertise. Excludes any existing tests.  
-  3. Pseudocode to target language(s): Translate; add infrastructure to support ongoing opensource development (CI testing, contributing guidelines, licenses).  
-  4. Tests and documentation: Implement any existing Stata tests in target language; summarise test correspondence; highlight missing tests. Review documentation (examples, papers), and translate to target language (eg. Vignettes in R)  
- 
-We used the plugin in workshops with statisticians to translate a selection of Stata packages. We will discuss our experiences from the workshops and compare our results with existing research in code translation. We aim to provoke informed discussion about the role of RSEs and LLMs in code translation.
+
+  We will discuss our experiences in developing a Claude Code plugin to support domain experts in statistics in translating Stata packages to R and Python.
+
+  The plugin implements 4 skills;
+    1. Analyse and plan: Is the package well documented and tested? Which target language(s)? Create a new library or contribute to an existing library?
+    2. Translation to pseudocode: Translation to pseudocode supports human review without language expertise. Excludes any existing tests.
+    3. Pseudocode to target language(s): Translate; add infrastructure to support ongoing opensource development (CI testing, contributing guidelines, licenses).
+    4. Tests and documentation: Implement any existing Stata tests in target language; summarise test correspondence; highlight missing tests. Review documentation (examples, papers), and translate to target language (eg. Vignettes in R)
+
+
+  We used the plugin in workshops with statisticians to translate a selection of Stata packages. We will discuss our experiences from the workshops and compare our results with existing research in code translation. We aim to provoke informed discussion about the role of RSEs and LLMs in code translation.
 authors:
   - family-names: Thompson
     given-names: Stephen
@@ -21,9 +24,7 @@ authors:
   - family-names: Tamuri
     given-names: Asif
     orcid: "https://orcid.org/0000-0001-6633-3789"
-
 repository-code: "https://github.com/stata-translations/talks-rse-con"
-license: CC 4.0
+license: "CC-BY-4.0"
 version: 0.0.1
 date-released: "2026-08-26"
-doi: 
