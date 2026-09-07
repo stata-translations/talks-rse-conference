@@ -9,7 +9,7 @@
 <link href="logo-slides_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="author" content="Stephen Thompson">
+  <meta name="author" content="Stephen Thompson, Asif Tamuri">
   <meta name="dcterms.date" content="2026-09-04">
   <title>Code Translation using Large Language Models: What’s the role of the Research Software Engineer?</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,72 +35,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="logo-slides_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="css/style.css">
@@ -205,89 +139,79 @@
         <figure>
       <img src="https://avatars.githubusercontent.com/u/278628511?s=400&amp;u=ba33ed091d293c8e9da8789d491a2c1964c3a53c&amp;v=4" width="20%" alt="The Stata2R Logo, an R overlaid with white squares.">
       </figure>
-        <p class="author">Stephen Thompson</p>
+        <p class="author">Stephen Thompson, Asif Tamuri</p>
         <p class="institute" style="color: #999;">UCL Centre for Advanced Research Computing and UCL Innovative Clinical Trials Unit</p>
         <p class="date">2026-09-04</p>
   </section>
 <section id="todays-talk" class="slide level2">
 <h2>Today’s Talk</h2>
 <ul>
-<li class="fragment">Brief Introduction (Talk/Stephen/Toby)</li>
-<li class="fragment">Background (Collaboration with Clinical Trials Unit)</li>
+<li class="fragment">Brief Introduction (UCL ICTU, UCL ARC)</li>
 <li class="fragment">Code Translation Motivation</li>
 <li class="fragment">Code Translation Mechanics</li>
 <li class="fragment">Workshop Results and Next Steps</li>
 </ul>
 </section>
-<section id="introduction-stephen" class="slide level2">
-<h2>Introduction: Stephen</h2>
-<ul>
-<li class="fragment">Senior Research Software Engineer Since October 2023</li>
-<li class="fragment">Background in augmented reality for keyhole surgery.</li>
-<li class="fragment">Mostly Healthcare projects: informus, education, EMAP, sense-base.</li>
-<li class="fragment">Special interest in game development for healthcare - Astrobalance.</li>
-</ul>
-</section>
-<section id="background---arc-collaboration-with-ictu" class="slide level2">
-<h2>Background - ARC Collaboration with ICTU</h2>
+<section id="innovative-clinical-trials-unit" class="slide level2">
+<h2>Innovative Clinical Trials Unit</h2>
 <p><img data-src="images/clinical_trials_unit.png" alt="A screenshot of the Innovative Clinical Trials Unit website" height="280"></p>
 <ul>
-<li class="fragment">World leaders in clinical trial design</li>
-<li class="fragment">Robust/tested statistics to support clinical trial design</li>
-<li class="fragment">2nd Floor of 90HH</li>
+<li class="fragment">Expert in clinical trial design and analysis.</li>
+<li class="fragment">Robust/tested statistics to support clinical trial design.</li>
+<li class="fragment">Impact through successful clinical trials / publications.</li>
 </ul>
 </section>
-<section id="arc-ictu-collaboration" class="slide level2">
-<h2>ARC / ICTU Collaboration</h2>
+<section id="advanced-research-computing" class="slide level2">
+<h2>Advanced Research Computing</h2>
+<p><img data-src="images/arc.png" alt="A screenshot of the Advanced Research Computing website, stating that ARC is UCL's research, innovation and service centre for the tools, practices and systems that enable computational science and digital scholarship." height="280"></p>
 <ul>
-<li class="fragment">Multiyear funding for ARC to support ICTU to improve code quality and sharing.</li>
-<li class="fragment">Outputs:
+<li class="fragment">Support researchers to create impact through software.</li>
+<li class="fragment">Software re-use and software sustainability.
 <ul>
-<li class="fragment">“Using Large Language Models and Coding Agents to Translate Stata Packages: Benefits and Risks” <a href="https://stata-uk.com/stata-uk-2026.html">Stata Con, London, Next Week</a></li>
-<li class="fragment">“Code Translation using Large Language Models: What’s the role of the Research Software Engineer?” <a href="https://virtual.oxfordabstracts.com/event/76908/submission/92">RSE Con, September 2026</a></li>
+<li class="fragment">Software that outlives the original grant funding.</li>
 </ul></li>
+<li class="fragment">Develop skills to contribute to key open source software.</li>
 </ul>
 </section>
-<section id="motivation---stata-translation" class="slide level2">
-<h2>Motivation - Stata Translation</h2>
+<section id="motication-example-artbin." class="slide level2">
+<h2>Motication: Example artbin.</h2>
+<p><img data-src="images/artbin.png" alt="A screenshot of the artbin publication in the Stata Journal titled artbin: Extended sample size for randomized trials with binary outcomes." height="440"></p>
+</section>
+<section id="motivation-example-artbin." class="slide level2">
+<h2>Motivation: Example artbin.</h2>
 <ul>
-<li class="fragment">Stata - commercial (closed source) statistical analysis software
+<li class="fragment">High quality software (including documentation and tests)</li>
+<li class="fragment">Demonstrated impact - used and cited in published trials.</li>
+<li class="fragment">Open source (GPL3) - free to download/modify
 <ul>
-<li class="fragment">economics, sociology, health</li>
+<li class="fragment">need Stata License to run.</li>
 </ul></li>
-<li class="fragment">Researchers can publish bespoke packages.
-<ul>
-<li class="fragment">Stata journal enforces testing/documentation etc.</li>
-</ul></li>
-<li class="fragment">Compared to Python or R the software impact is limited.</li>
-<li class="fragment">Can we increase software impact by translating to other languages?</li>
+<li class="fragment">Can we increase impact by translation.</li>
 </ul>
 </section>
-<section id="motivation-stata-and-r-citation-metrics" class="slide level2">
-<h2>Motivation Stata and R (Citation Metrics)</h2>
+<section id="motivation-example-reghdfe" class="slide level2">
+<h2>Motivation: Example reghdfe</h2>
 <ul>
-<li class="fragment">R Journal Impact (Scimago Journal Ranking: 0.483) (H-Index 71)</li>
-<li class="fragment">Stata Journal Impact (Scimago Journal Ranking: 1.699) (H-Index 123)</li>
+<li class="fragment"><a href="https://github.com/sergiocorreia/reghdfe">reghdfe</a></li>
+<li class="fragment">High impact Stata package</li>
+<li class="fragment">Is it sustainable/maintainable?</li>
+<li class="fragment">Can we make it last longer by translation.</li>
+<li class="fragment">Compare with <a href="https://github.com/tidyverse/dplyr">dplyr</a>.</li>
 </ul>
 </section>
 <section id="motivation-stata-and-r-software-metrics" class="slide level2">
 <h2>Motivation Stata and R (Software Metrics)</h2>
 <ul>
-<li class="fragment">Stata Language on GitHub 18.4K repositories ~ median 6 stars
-<ul>
-<li class="fragment">High impact Stata packages reghdfe 248 stars, ietoolkit 244</li>
-</ul></li>
-<li class="fragment">R Language on GithHub 1.1M repositories ~ median 313 stars</li>
+<li class="fragment">R is free and open source.</li>
+<li class="fragment">Many more users and developers for R.</li>
+<li class="fragment">Stata Language on GitHub 18.4K repositories</li>
+<li class="fragment">R Language on GithHub 1.1M repositories</li>
 </ul>
 </section>
-<section id="motivation-stata-and-r---creating-impact" class="slide level2">
-<h2>Motivation Stata and R - Creating Impact</h2>
+<section id="motivation-stata-and-r---more-impact" class="slide level2">
+<h2>Motivation Stata and R - More Impact?</h2>
 <ul>
-<li class="fragment">Conclusion. Translations;
-<ul>
-<li class="fragment">may not have big impact on paper citations.</li>
-<li class="fragment">likely to increase the software impact (re-use, contributions, maintenance) of your software.</li>
-</ul></li>
+<li class="fragment">Translation is likely to increase impact of software, but no evidence yet.</li>
 </ul>
 </section>
 <section id="stata2r-practicalities" class="slide level2">
@@ -303,59 +227,53 @@
 <li class="fragment">Can we leverage advances in agent based code translation?</li>
 </ul>
 </section>
-<section id="rapidly-growing-work-on-code-translation-using-language-models." class="slide level2">
-<h2>Rapidly growing work on code translation using language models.</h2>
-
-<img data-src="images/paper_count.png" style="width:65.0%" alt="A plot showing a rapid increase in pubications references Lanugage models and code translations (to 65 in 2025)" class="r-stretch"></section>
-<section id="stata2r-practicalities-1" class="slide level2">
-<h2>Stata2R: Practicalities</h2>
+<section id="agentic-coding-claude-code" class="slide level2">
+<h2>Agentic Coding (Claude Code)</h2>
 <ul>
-<li class="fragment">Resources:
-<ul>
-<li class="fragment">Departmental subscription to Claude Code.</li>
-<li class="fragment">Approx 4 weeks RSE time.</li>
-</ul></li>
-<li class="fragment">Plan:
-<ul>
-<li class="fragment">Research Code translation.</li>
-<li class="fragment">Develop method -&gt; A Claude Plugin.</li>
-<li class="fragment">Develop HowTo for Statisticians.</li>
-</ul></li>
+<li class="fragment">A user interface for working with large language models to complete software tasks.</li>
+<li class="fragment">Users communicate in plain text (for example “translate artbin to R”)</li>
+<li class="fragment">Non deterministic (stochastic sampling from many possible answers).</li>
+<li class="fragment">We developed the <strong>Stata2R</strong> “plugin” with 4 “skills” to try and limit the effects of non deterministic behaviour.</li>
 </ul>
 </section>
-<section id="whats-in-a-plugin" class="slide level2">
-<h2>What’s in a plugin</h2>
-<p>A plugin is a collection of <code>Skills</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="" aria-label="1"></a>└── skills</span>
-<span id="cb1-2"><a href="" aria-label="2"></a>    ├── add-missing-tests</span>
-<span id="cb1-3"><a href="" aria-label="3"></a>    │&nbsp;&nbsp; └── SKILL.md</span>
-<span id="cb1-4"><a href="" aria-label="4"></a>    ├── add-stata-tests-r</span>
-<span id="cb1-5"><a href="" aria-label="5"></a>    │&nbsp;&nbsp; └── SKILL.md</span>
-<span id="cb1-6"><a href="" aria-label="6"></a>    ├── hello</span>
-<span id="cb1-7"><a href="" aria-label="7"></a>    │&nbsp;&nbsp; └── SKILL.md</span>
-<span id="cb1-8"><a href="" aria-label="8"></a>    ├── pseudocode-to-r</span>
-<span id="cb1-9"><a href="" aria-label="9"></a>    │&nbsp;&nbsp; ├── assets</span>
-<span id="cb1-10"><a href="" aria-label="10"></a>    │&nbsp;&nbsp; ├── references</span>
-<span id="cb1-11"><a href="" aria-label="11"></a>    │&nbsp;&nbsp; │&nbsp;&nbsp; └── language_mappings.md</span>
-<span id="cb1-12"><a href="" aria-label="12"></a>    │&nbsp;&nbsp; └── SKILL.md</span>
-<span id="cb1-13"><a href="" aria-label="13"></a>    ├── run-stata</span>
-<span id="cb1-14"><a href="" aria-label="14"></a>    │&nbsp;&nbsp; └── SKILL.md</span>
-<span id="cb1-15"><a href="" aria-label="15"></a>    ├── stata-to-pseudocode</span>
-<span id="cb1-16"><a href="" aria-label="16"></a>    │&nbsp;&nbsp; ├── assets</span>
-<span id="cb1-17"><a href="" aria-label="17"></a>    │&nbsp;&nbsp; ├── references</span>
-<span id="cb1-18"><a href="" aria-label="18"></a>    │&nbsp;&nbsp; └── SKILL.md</span>
-<span id="cb1-19"><a href="" aria-label="19"></a>    └── translation-strategy</span>
-<span id="cb1-20"><a href="" aria-label="20"></a>        ├── assets</span>
-<span id="cb1-21"><a href="" aria-label="21"></a>        ├── references</span>
-<span id="cb1-22"><a href="" aria-label="22"></a>        └── SKILL.md</span>
-<span id="cb1-23"><a href="" aria-label="23"></a></span>
-<span id="cb1-24"><a href="" aria-label="24"></a>15 directories, 8 files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="whats-in-a-skill" class="slide level2">
-<h2>What’s in a Skill</h2>
-<p><a href="https://github.com/stata-translations/Stata2R/blob/main/stata-translation/skills/">Skills are Markdown</a></p>
+<section id="plugin-skill-1-translation-strategy" class="slide level2">
+<h2>Plugin Skill 1: Translation Strategy</h2>
 <ul>
-<li class="fragment"><p>And easy to install</p>
+<li class="fragment">Summarise the purpose of the library.</li>
+<li class="fragment">Is it worth translating? (existing R libraries, users etc)</li>
+<li class="fragment">Is the documentation and testing sufficient to enable a good translation.</li>
+</ul>
+</section>
+<section id="plugin-skill-2-stata-to-pseudocode" class="slide level2">
+<h2>Plugin Skill 2: Stata to Pseudocode</h2>
+<ul>
+<li class="fragment">Evidence that two stage translation creates better code.</li>
+<li class="fragment">Enables a human review step.</li>
+<li class="fragment">Supports translation to multiple target language.</li>
+<li class="fragment">Deliberately excluded any existing tests.</li>
+</ul>
+</section>
+<section id="plugin-skill-3-pseudocode-to-r" class="slide level2">
+<h2>Plugin Skill 3: Pseudocode to R</h2>
+<ul>
+<li class="fragment">Use the pseudocode to create an R package.</li>
+<li class="fragment">Copy over licence file and create README, CONTRIBUTING, files etc.</li>
+</ul>
+</section>
+<section id="plugin-skill-4-add-stata-tests-to-r" class="slide level2">
+<h2>Plugin Skill 4: Add Stata Tests to R</h2>
+<ul>
+<li class="fragment">Port the Stata tests to R and confirm they pass.</li>
+<li class="fragment">Document Stata to R test correspondence and verify results.</li>
+<li class="fragment">Port Stata documentation and examples to R (create vignettes)</li>
+<li class="fragment">Port any dialogues (graphical user interfaces) to R.</li>
+</ul>
+</section>
+<section id="whats-in-a-plugin-skill" class="slide level2">
+<h2>What’s in a Plugin / Skill</h2>
+<p><a href="https://github.com/stata-translations/Stata2R/blob/main/stata-translation/skills/">Skills are Plain Text</a></p>
+<ul>
+<li class="fragment"><p>Plugins are collections of skills that are easy to install</p>
 <pre><code>/plugins marketplace add https://github.com/stata-translations/Stata2R.git
 /plugin install stata-translation
 /reload-plugins
@@ -364,45 +282,24 @@
 </section>
 <section id="run-as-an-interactive-workshop" class="slide level2">
 <h2>Run as an interactive workshop</h2>
-<p>Developed and delivered a <a href="https://github.com/stata-translations/Stata2R/blob/main/docs/workshop.md">Workshop</a> to around 10 statisticians. Aims:</p>
+<p>We developed and delivered a <a href="https://github.com/stata-translations/Stata2R/blob/main/docs/workshop.md">Workshop</a> to<br>
+10 statisticians aiming to:</p>
 <ul>
-<li class="fragment">Teach them how to use Claude to translate code.</li>
-<li class="fragment">Leverage their skills to help understand how well Claude works.
+<li class="fragment">Teach statisticians to use Claude to translate code.</li>
+<li class="fragment">Leverage statisticians skills to help understand how well Claude works.
 <ul>
 <li class="fragment"><a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwuNcJ7ofdGhDpRexUha3NYhUMU5QQ000NVpFTVRKRTEzRDRCQ0w4V05XMS4u">Pre Workshop Surveys</a></li>
 <li class="fragment"><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwkgtFALcEfRKnhSRePBd-9dUQjI1SzdIT1pROVBHVDJSNDU3QUNZVTBGTiQlQCN0PWcu">Post work shop survey</a></li>
 </ul></li>
 </ul>
 </section>
-<section id="results-brief" class="slide level2">
-<h2>Results: Brief</h2>
-<ul>
-<li class="fragment">Claude can translate code and appears to give sensible results.</li>
-<li class="fragment">Participants were generally happy and eager to pursue this further.
-<ul>
-<li class="fragment">Statisticians take the accuracy of the software very seriously.</li>
-</ul></li>
-</ul>
-</section>
-<section id="pre-workshop-current-roles" class="slide level2">
-<h2>Pre-Workshop: Current Roles</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-roles.html" title="Answers to survey question on current roles. Total of 9 statisticians, 5 researchers, 1 research software engineer, one Data Scientist."></iframe>
-</section>
-<section id="pre-workshop-stata-fluency" class="slide level2">
-<h2>Pre-Workshop: Stata Fluency</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-stata_fluency.html" title="The participants self reported stata fluency. 8 were fluent, 4 Occasional, 1 never."></iframe>
-</section>
 <section id="pre-workshop-stata-and-r-fluency" class="slide level2">
 <h2>Pre-Workshop: Stata and R Fluency</h2>
 <iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-stata-vs-r_fluency.html" title="X-Y plot of Stata vs R Fluency. No one was fluent in both."></iframe>
 </section>
-<section id="pre-workshop-language-correlation" class="slide level2">
-<h2>Pre-Workshop: Language Correlation</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-languages.html" title="Correlation between language fluency. Fluency in Stata was negatively correlated with fluency in R, Python, and Matlab."></iframe>
-</section>
-<section id="pre-workshop-expectations-word-cloud" class="slide level2">
-<h2>Pre-Workshop: Expectations Word Cloud</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre_expectations.html" title="A word cloud of answers to the free text question 'Is there anything specific you want to get out of the workshop?' The dominant phrase is 'Stata to R Translation' Other phrases include 'LLM Workflow best practices' and 'Exploring Claude's Capabilities'"></iframe>
+<section id="post-workshop-skills-assessment-time-taken." class="slide level2">
+<h2>Post-Workshop: Skills assessment (Time Taken).</h2>
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_time.html" title="The time taken to perform translation by model variant."></iframe>
 </section>
 <section id="post-workshop-concerns-work-cloud" class="slide level2">
 <h2>Post-Workshop: Concerns Work Cloud</h2>
@@ -412,59 +309,31 @@
 <h2>Post-Workshop: Ideas for Improvements / Future Work.</h2>
 <iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_improvements.html" title="A word cloud of answers to the question " what="" improvements="" would="" you="" suggest?="" most="" respondonts="" wanted="" to="" see="" more="" work="" on="" 'verifying="" correctness'"=""></iframe>
 </section>
-<section id="post-workshop-skills-assessment-analysis." class="slide level2">
-<h2>Post-Workshop: Skills assessment (analysis).</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_analysis.html" title="The third blood vessel game."></iframe>
-</section>
-<section id="post-workshop-skills-assessment-infrastructure." class="slide level2">
-<h2>Post-Workshop: Skills assessment (infrastructure).</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_infrastructure.html" title="The third blood vessel game."></iframe>
-</section>
-<section id="post-workshop-skills-assessment-interaction-required." class="slide level2">
-<h2>Post-Workshop: Skills assessment (interaction required).</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_interaction.html" title="The third blood vessel game."></iframe>
-</section>
-<section id="post-workshop-skills-assessment-pseudocode." class="slide level2">
-<h2>Post-Workshop: Skills assessment (pseudocode).</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_pseudocode.html" title="The third blood vessel game."></iframe>
-</section>
-<section id="post-workshop-skills-assessment-reliability." class="slide level2">
-<h2>Post-Workshop: Skills assessment (reliability).</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_reliability.html" title="The third blood vessel game."></iframe>
-</section>
-<section id="post-workshop-skills-assessment-target-language-quality." class="slide level2">
-<h2>Post-Workshop: Skills assessment (target language quality).</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_target_language.html" title="The third blood vessel game."></iframe>
-</section>
-<section id="post-workshop-skills-assessment-testing-quality." class="slide level2">
-<h2>Post-Workshop: Skills assessment (testing quality).</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_testing.html" title="The third blood vessel game."></iframe>
-</section>
-<section id="post-workshop-skills-assessment-time-taken." class="slide level2">
-<h2>Post-Workshop: Skills assessment (Time Taken).</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_time.html" title="The third blood vessel game."></iframe>
-</section>
-<section id="post-workshop-skills-assessment-documentation-quality." class="slide level2">
-<h2>Post-Workshop: Skills assessment (Documentation Quality).</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_vs_effort.html" title="The third blood vessel game."></iframe>
-</section>
-<section id="post-workshop-workshop-quality" class="slide level2">
-<h2>Post-Workshop: Workshop Quality</h2>
-<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_workshop_useful.html" title="The third blood vessel game."></iframe>
+<section id="further-considerations" class="slide level2">
+<h2>Further Considerations</h2>
+<ul>
+<li class="fragment">Ongoing development (do you plan on maintaining both versions?)</li>
+<li class="fragment">Are you complying with the original license?</li>
+<li class="fragment">Who owns the copyright?</li>
+<li class="fragment">Preventing access to sensitive data.</li>
+</ul>
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
 <ul>
 <li class="fragment">Claude can translate code.</li>
+<li class="fragment">Results are non deterministic.</li>
 <li class="fragment">The plugin provides some structure, but human intervention is still required to keep Claude on track.</li>
 <li class="fragment">Translation depends on documentation and testing as well as source code quality.</li>
-<li class="fragment">Results are non deterministic.</li>
-<li class="fragment">Future work: Publish to CRAN.</li>
+<li class="fragment">Accuracy and validation is critical for clinical trials software.</li>
 </ul>
 </section>
-<section id="with-thanks-to" class="slide level2">
-<h2>With thanks to:</h2>
-<p>Asif Tamuri, James Carpenter, Matthew Burnell, David Fisher, Babak Choodri-Oskooei, Matteo Quartagno, Becky Turner, Tra My Pham, Guilio Scola, Michelle Clements, Ian White, Samina Begum, Henry Bern, Akshay Jagadeesh, David Perez-Suarez, Haroon Chughtai, and Toby.</p>
+<section id="contributors" class="slide level2">
+<h2>Contributors:</h2>
+<p>James Carpenter, Tra My Pham, Asif Tamuri, David Fisher, Matteo Quartagno, Carlos Diaz Montana, Ian White, Toby Thompson</p>
+<p><strong>Links:</strong></p>
+<p>Slides: <a href="https://doi.org/10.5281/zenodo.22124100">https://doi.org/10.5281/zenodo.22124100</a> Workshop Results: <a href="https://doi.org/10.5281/zenodo.22093626">https://doi.org/10.5281/zenodo.22093626</a> Stata2R Plugin: <a href="https://github.com/stata-translations/Stata2R">https://github.com/stata-translations/Stata2R</a></p>
+<p><img data-src="images/qr-code.png" alt="Link to https://stata-translations.github.io/talks-stata-conference/" height="240"></p>
 
 </section>
     </div>
