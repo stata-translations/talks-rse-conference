@@ -1,6 +1,6 @@
 ---
 title: "Code Translation using Large Language Models: What's the role of the Research Software Engineer?"
-author: Stephen Thompson
+author: Stephen Thompson, Asif Tamuri
 date: 2026-09-04
 institute: UCL Centre for Advanced Research Computing and UCL Innovative Clinical Trials Unit
 title-image: https://avatars.githubusercontent.com/u/278628511?s=400&u=ba33ed091d293c8e9da8789d491a2c1964c3a53c&v=4

@@ -162,7 +162,7 @@ We developed and delivered a [Workshop](https://github.com/stata-translations/St
 
 ## Contributors:
 
-  James Carpenter, Tra My Pham, Asif Tamuri, David Fisher, David Perez-Suarez, Matteo Quartagno, Carlos Diaz Montana, Ian White
+  James Carpenter, Tra My Pham, Asif Tamuri, David Fisher, Matteo Quartagno, Carlos Diaz Montana, Ian White, Toby Thompson
 
   **Links:**
 
