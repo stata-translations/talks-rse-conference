@@ -160,10 +160,11 @@
 <li class="fragment">Experts in clinical trial design and analysis - statisticians.
 <ul>
 <li class="fragment">Impact through successful clinical trials / publications.</li>
+<li class="fragment">A lot of software written in Stata.</li>
 </ul></li>
 <li class="fragment">Research software engineers
 <ul>
-<li class="fragment">Collaboration to create create impact through software.</li>
+<li class="fragment">Collaboration to create impact through software.</li>
 </ul></li>
 </ul>
 </section>
@@ -214,6 +215,26 @@
 <li class="fragment">Will usually do what you ask, which may not be a good thing.</li>
 </ul></li>
 <li class="fragment">We developed the <strong>Stata2R</strong> “plugin” with 4 “skills” to limit the impact of non deterministic behaviour and unquestioning behaviour.</li>
+<li class="fragment">We delivered a 4 hour workshop to use the plugin.</li>
+</ul>
+</section>
+<section id="whats-in-a-plugin-skill" class="slide level2">
+<h2>What’s in a Plugin / Skill</h2>
+<p><a href="https://github.com/stata-translations/Stata2R/blob/main/stata-translation/skills/">Skills are defined in markdown.</a></p>
+<ul>
+<li class="fragment"><p>Plugins are collections of skills that are easy to install</p>
+<pre><code>/plugins marketplace add https://github.com/stata-translations/Stata2R.git
+/plugin install stata-translation
+/reload-plugins
+/stata-translation:hello</code></pre></li>
+<li class="fragment"><pre><code>/stata-translation:translation-strategy
+</code></pre></li>
+<li class="fragment"><pre><code>/stata-translation:stata-to-pseudocode
+</code></pre></li>
+<li class="fragment"><pre><code>/stata-translation:pseudocode-to-r
+</code></pre></li>
+<li class="fragment"><pre><code>/stata-translation:add-missing-tests
+</code></pre></li>
 </ul>
 </section>
 <section id="plugin-skill-1-translation-strategy" class="slide level2">
@@ -229,35 +250,25 @@
 <ul>
 <li class="fragment">Evidence that two stage translation creates better code.</li>
 <li class="fragment">Enables a human review step.</li>
-<li class="fragment">Supports translation to multiple target language.</li>
-<li class="fragment">Deliberately excluded any existing tests.</li>
+<li class="fragment">Use any documentation files (.sthlp) to inform the translation.</li>
+<li class="fragment">Ignore all files in the testing directory.</li>
 </ul>
 </section>
 <section id="plugin-skill-3-pseudocode-to-r" class="slide level2">
 <h2>Plugin Skill 3: Pseudocode to R</h2>
 <ul>
 <li class="fragment">Use the pseudocode to create an R package.</li>
+<li class="fragment">Create automated tests.</li>
+<li class="fragment">Port Stata documentation and examples to R (create vignettes)</li>
+<li class="fragment">Port any dialogues (graphical user interfaces) to R.</li>
 <li class="fragment">Copy over licence file and create README, CONTRIBUTING, files etc.</li>
 </ul>
 </section>
-<section id="plugin-skill-4-add-stata-tests-to-r" class="slide level2">
-<h2>Plugin Skill 4: Add Stata Tests to R</h2>
+<section id="plugin-skill-4-add-missing-stata-tests-to-r" class="slide level2">
+<h2>Plugin Skill 4: Add Missing Stata Tests to R</h2>
 <ul>
 <li class="fragment">Port the Stata tests to R and confirm they pass.</li>
 <li class="fragment">Document Stata to R test correspondence and verify results.</li>
-<li class="fragment">Port Stata documentation and examples to R (create vignettes)</li>
-<li class="fragment">Port any dialogues (graphical user interfaces) to R.</li>
-</ul>
-</section>
-<section id="whats-in-a-plugin-skill" class="slide level2">
-<h2>What’s in a Plugin / Skill</h2>
-<p><a href="https://github.com/stata-translations/Stata2R/blob/main/stata-translation/skills/">Skills are Plain Text</a></p>
-<ul>
-<li class="fragment"><p>Plugins are collections of skills that are easy to install</p>
-<pre><code>/plugins marketplace add https://github.com/stata-translations/Stata2R.git
-/plugin install stata-translation
-/reload-plugins
-/stata-translation:hello</code></pre></li>
 </ul>
 </section>
 <section id="developed-a-training-program." class="slide level2">
@@ -266,7 +277,7 @@
 10 statisticians aiming to:</p>
 <ul>
 <li class="fragment">Teach statisticians to use Claude to translate code.</li>
-<li class="fragment">Leverage statisticians skills to help understand how well Claude works.
+<li class="fragment">Use statisticians to review the quality of resulting translations.
 <ul>
 <li class="fragment"><a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwuNcJ7ofdGhDpRexUha3NYhUMU5QQ000NVpFTVRKRTEzRDRCQ0w4V05XMS4u">Pre Workshop Surveys</a></li>
 <li class="fragment"><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwkgtFALcEfRKnhSRePBd-9dUQjI1SzdIT1pROVBHVDJSNDU3QUNZVTBGTiQlQCN0PWcu">Post work shop survey</a></li>
@@ -277,8 +288,12 @@
 <h2>Pre-Workshop: Stata and R Fluency</h2>
 <iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/pre-stata-vs-r_fluency.html" title="X-Y plot of Stata vs R Fluency. No one was fluent in both."></iframe>
 </section>
-<section id="post-workshop-skills-assessment-time-taken." class="slide level2">
-<h2>Post-Workshop: Skills assessment (Time Taken).</h2>
+<section id="post-workshop-skills-assessment-target-language-quality." class="slide level2">
+<h2>Post-Workshop: Skills assessment (Target language quality).</h2>
+<iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_target_language.html" title="The percieved quality of the translation, grouped my model variant."></iframe>
+</section>
+<section id="post-workshop-skills-assessment-example-time-taken." class="slide level2">
+<h2>Post-Workshop: Skills assessment Example (Time Taken).</h2>
 <iframe width="100%" height="100%" src="https://stata-translations.github.io/workshop-results/post_model_time.html" title="The time taken to perform translation by model variant."></iframe>
 </section>
 <section id="post-workshop-concerns-work-cloud" class="slide level2">
@@ -304,8 +319,6 @@
 <li class="fragment">Claude can translate code.</li>
 <li class="fragment">Results are non deterministic.</li>
 <li class="fragment">The plugin provides some structure, but human intervention is still required to keep Claude on track.</li>
-<li class="fragment">Translation depends on documentation and testing as well as source code quality.</li>
-<li class="fragment">Accuracy and validation is critical for clinical trials software.</li>
 </ul>
 </section>
 <section id="contributors" class="slide level2">
