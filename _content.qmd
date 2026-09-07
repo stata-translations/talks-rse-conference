@@ -3,27 +3,27 @@
  - Brief Introduction (UCL ICTU, UCL ARC)
  - Code Translation Motivation
  - Code Translation Mechanics
- - Workshop Results and Next Steps
+ - Workshop Results
+ - Summary
 
-## Innovative Clinical Trials Unit
+## Innovative Clinical Trials Unit and ARC
 
-![](images/clinical_trials_unit.png){fig-alt="A screenshot of the Innovative Clinical Trials Unit website" height="280"}
+![](images/clinical_trials_unit.png){fig-alt="A screenshot of the Innovative Clinical Trials Unit website" height="220"} 
+![](images/plus.png){fig-alt="A plus sign" height="220"} 
+![](images/arc.png){fig-alt="A screenshot of the Advanced Research Computing website, stating that ARC is UCL's research, innovation and service centre for the tools, practices and systems that enable computational science and digital scholarship." height="220"}
 
- - Expert in clinical trial design and analysis.
- - Robust/tested statistics to support clinical trial design.
- - Impact through successful clinical trials / publications.
+ - Experts in clinical trial design and analysis - statisticians.
+   - Impact through successful clinical trials / publications.
+ - Research software engineers
+   - Collaboration to create create impact through software.
 
+## About Stata
 
-## Advanced Research Computing
+ - Closed source commercial statistics software.
+ - Supports community contribution with a package library and publication through the Stata journal.
+ - Stata journal encourages good software practice - tests, documentation. 
 
-![](images/arc.png){fig-alt="A screenshot of the Advanced Research Computing website, stating that ARC is UCL's research, innovation and service centre for the tools, practices and systems that enable computational science and digital scholarship." height="280"}
-
- - Support researchers to create impact through software.
- - Software re-use and software sustainability.
-   - Software that outlives the original grant funding.
- - Develop skills to contribute to key open source software.
-
-## Motication: Example artbin.
+## Motivation: Example artbin.
 
 ![](images/artbin.png){fig-alt="A screenshot of the artbin publication in the Stata Journal titled artbin: Extended sample size for randomized trials with binary outcomes." height="440"}
 
@@ -33,26 +33,8 @@
   - Demonstrated impact - used and cited in published trials.
   - Open source (GPL3) - free to download/modify
     - need Stata License to run.
+  - Stata community is tiny compared to R or Python.
   - Can we increase impact by translation. 
-
-## Motivation: Example reghdfe
-
- - [reghdfe](https://github.com/sergiocorreia/reghdfe)
- - High impact Stata package
- - Is it sustainable/maintainable?
- - Can we make it last longer by translation.
- - Compare with [dplyr](https://github.com/tidyverse/dplyr).
-
-## Motivation Stata and R (Software Metrics)
-
- - R is free and open source. 
- - Many more users and developers for R.
- - Stata Language on GitHub 18.4K repositories 
- - R Language on GithHub 1.1M repositories
- 
-## Motivation Stata and R - More Impact?
-
- - Translation is likely to increase impact of software, but no evidence yet.
 
 ## Stata2R: Practicalities
 
@@ -62,15 +44,14 @@
    - Domain Expertise (Statistics)
    - Time (funding)
 
- - Can we leverage advances in agent based code translation?
-
+ - Lets leverage advances in agent based code translation?
 
 ## Agentic Coding (Claude Code)
  
- - A user interface for working with large language models to complete software tasks. 
  - Users communicate in plain text (for example "translate artbin to R")
- - Non deterministic (stochastic sampling from many possible answers).
- - We developed the **Stata2R** "plugin" with 4 "skills" to try and limit the effects of non deterministic behaviour.
+   - Non deterministic (stochastic sampling from many possible answers).
+   - Will usually do what you ask, which may not be a good thing.
+ - We developed the **Stata2R** "plugin" with 4 "skills" to limit the impact of non deterministic behaviour and unquestioning behaviour.
 
 ## Plugin Skill 1: Translation Strategy
  
@@ -110,7 +91,7 @@
     /stata-translation:hello
     ```
 
-## Run as an interactive workshop
+## Developed a training program.
 
 We developed and delivered a [Workshop](https://github.com/stata-translations/Stata2R/blob/main/docs/workshop.md) to  
 10 statisticians aiming to:
