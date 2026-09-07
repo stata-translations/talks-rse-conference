@@ -149,35 +149,37 @@
 <li class="fragment">Brief Introduction (UCL ICTU, UCL ARC)</li>
 <li class="fragment">Code Translation Motivation</li>
 <li class="fragment">Code Translation Mechanics</li>
-<li class="fragment">Workshop Results and Next Steps</li>
+<li class="fragment">Workshop Results</li>
+<li class="fragment">Summary</li>
 </ul>
 </section>
-<section id="innovative-clinical-trials-unit" class="slide level2">
-<h2>Innovative Clinical Trials Unit</h2>
-<p><img data-src="images/clinical_trials_unit.png" alt="A screenshot of the Innovative Clinical Trials Unit website" height="280"></p>
+<section id="innovative-clinical-trials-unit-and-arc" class="slide level2">
+<h2>Innovative Clinical Trials Unit and ARC</h2>
+<p><img data-src="images/clinical_trials_unit.png" alt="A screenshot of the Innovative Clinical Trials Unit website" height="220"> <img data-src="images/plus.png" alt="A plus sign" height="220"> <img data-src="images/arc.png" alt="A screenshot of the Advanced Research Computing website, stating that ARC is UCL's research, innovation and service centre for the tools, practices and systems that enable computational science and digital scholarship." height="220"></p>
 <ul>
-<li class="fragment">Expert in clinical trial design and analysis.</li>
-<li class="fragment">Robust/tested statistics to support clinical trial design.</li>
+<li class="fragment">Experts in clinical trial design and analysis - statisticians.
+<ul>
 <li class="fragment">Impact through successful clinical trials / publications.</li>
-</ul>
-</section>
-<section id="advanced-research-computing" class="slide level2">
-<h2>Advanced Research Computing</h2>
-<p><img data-src="images/arc.png" alt="A screenshot of the Advanced Research Computing website, stating that ARC is UCL's research, innovation and service centre for the tools, practices and systems that enable computational science and digital scholarship." height="280"></p>
-<ul>
-<li class="fragment">Support researchers to create impact through software.</li>
-<li class="fragment">Software re-use and software sustainability.
-<ul>
-<li class="fragment">Software that outlives the original grant funding.</li>
 </ul></li>
-<li class="fragment">Develop skills to contribute to key open source software.</li>
+<li class="fragment">Research software engineers
+<ul>
+<li class="fragment">Collaboration to create create impact through software.</li>
+</ul></li>
 </ul>
 </section>
-<section id="motication-example-artbin." class="slide level2">
-<h2>Motication: Example artbin.</h2>
-<p><img data-src="images/artbin.png" alt="A screenshot of the artbin publication in the Stata Journal titled artbin: Extended sample size for randomized trials with binary outcomes." height="440"></p>
+<section id="about-stata" class="slide level2">
+<h2>About Stata</h2>
+<ul>
+<li class="fragment">Closed source commercial statistics software.</li>
+<li class="fragment">Supports community contribution with a package library and publication through the Stata journal.</li>
+<li class="fragment">Stata journal encourages good software practice - tests, documentation.</li>
+</ul>
 </section>
 <section id="motivation-example-artbin." class="slide level2">
+<h2>Motivation: Example artbin.</h2>
+<p><img data-src="images/artbin.png" alt="A screenshot of the artbin publication in the Stata Journal titled artbin: Extended sample size for randomized trials with binary outcomes." height="440"></p>
+</section>
+<section id="motivation-example-artbin.-1" class="slide level2">
 <h2>Motivation: Example artbin.</h2>
 <ul>
 <li class="fragment">High quality software (including documentation and tests)</li>
@@ -186,32 +188,8 @@
 <ul>
 <li class="fragment">need Stata License to run.</li>
 </ul></li>
+<li class="fragment">Stata community is tiny compared to R or Python.</li>
 <li class="fragment">Can we increase impact by translation.</li>
-</ul>
-</section>
-<section id="motivation-example-reghdfe" class="slide level2">
-<h2>Motivation: Example reghdfe</h2>
-<ul>
-<li class="fragment"><a href="https://github.com/sergiocorreia/reghdfe">reghdfe</a></li>
-<li class="fragment">High impact Stata package</li>
-<li class="fragment">Is it sustainable/maintainable?</li>
-<li class="fragment">Can we make it last longer by translation.</li>
-<li class="fragment">Compare with <a href="https://github.com/tidyverse/dplyr">dplyr</a>.</li>
-</ul>
-</section>
-<section id="motivation-stata-and-r-software-metrics" class="slide level2">
-<h2>Motivation Stata and R (Software Metrics)</h2>
-<ul>
-<li class="fragment">R is free and open source.</li>
-<li class="fragment">Many more users and developers for R.</li>
-<li class="fragment">Stata Language on GitHub 18.4K repositories</li>
-<li class="fragment">R Language on GithHub 1.1M repositories</li>
-</ul>
-</section>
-<section id="motivation-stata-and-r---more-impact" class="slide level2">
-<h2>Motivation Stata and R - More Impact?</h2>
-<ul>
-<li class="fragment">Translation is likely to increase impact of software, but no evidence yet.</li>
 </ul>
 </section>
 <section id="stata2r-practicalities" class="slide level2">
@@ -224,16 +202,18 @@
 <li class="fragment">Domain Expertise (Statistics)</li>
 <li class="fragment">Time (funding)</li>
 </ul></li>
-<li class="fragment">Can we leverage advances in agent based code translation?</li>
+<li class="fragment">Lets leverage advances in agent based code translation?</li>
 </ul>
 </section>
 <section id="agentic-coding-claude-code" class="slide level2">
 <h2>Agentic Coding (Claude Code)</h2>
 <ul>
-<li class="fragment">A user interface for working with large language models to complete software tasks.</li>
-<li class="fragment">Users communicate in plain text (for example “translate artbin to R”)</li>
+<li class="fragment">Users communicate in plain text (for example “translate artbin to R”)
+<ul>
 <li class="fragment">Non deterministic (stochastic sampling from many possible answers).</li>
-<li class="fragment">We developed the <strong>Stata2R</strong> “plugin” with 4 “skills” to try and limit the effects of non deterministic behaviour.</li>
+<li class="fragment">Will usually do what you ask, which may not be a good thing.</li>
+</ul></li>
+<li class="fragment">We developed the <strong>Stata2R</strong> “plugin” with 4 “skills” to limit the impact of non deterministic behaviour and unquestioning behaviour.</li>
 </ul>
 </section>
 <section id="plugin-skill-1-translation-strategy" class="slide level2">
@@ -280,8 +260,8 @@
 /stata-translation:hello</code></pre></li>
 </ul>
 </section>
-<section id="run-as-an-interactive-workshop" class="slide level2">
-<h2>Run as an interactive workshop</h2>
+<section id="developed-a-training-program." class="slide level2">
+<h2>Developed a training program.</h2>
 <p>We developed and delivered a <a href="https://github.com/stata-translations/Stata2R/blob/main/docs/workshop.md">Workshop</a> to<br>
 10 statisticians aiming to:</p>
 <ul>
