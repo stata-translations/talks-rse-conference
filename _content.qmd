@@ -164,14 +164,16 @@ We developed and delivered a [Workshop](https://github.com/stata-translations/St
   - Results are non deterministic.
   - The plugin provides some structure, but human intervention is still required to keep Claude on track.
 
-## Contributors:
+## With Thanks to:
 
   James Carpenter, Tra My Pham, Asif Tamuri, David Fisher, Matteo Quartagno, Carlos Diaz Montana, Ian White, Toby Thompson
 
   **Links:**
 
   Slides: [https://doi.org/10.5281/zenodo.22124100](https://doi.org/10.5281/zenodo.22124100)
+
   Workshop Results: [https://doi.org/10.5281/zenodo.22093626](https://doi.org/10.5281/zenodo.22093626)
+
   Stata2R Plugin: [https://github.com/stata-translations/Stata2R](https://github.com/stata-translations/Stata2R)
 
 ![](images/qr-code.png){fig-alt="Link to https://stata-translations.github.io/talks-stata-conference/" height="240"}
