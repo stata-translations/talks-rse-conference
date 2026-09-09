@@ -51,7 +51,7 @@
  - Users communicate in plain text (for example "translate artbin to R")
    - Non deterministic (stochastic sampling from many possible answers).
    - Will usually do what you ask, which may not be a good thing.
- - We developed the **Stata2R** "plugin" with 4 "skills" to limit the impact of non deterministic behaviour and unquestioning behaviour.
+ - We developed the **Stata2R** plugin with 4 skills to limit the impact of non deterministic behaviour and unquestioning behaviour.
  - We delivered a 4 hour workshop to use the plugin.
  
 ## What's in a Plugin / Skill
